@@ -12,11 +12,12 @@ datasource db {
 
 model User {
   id          String    @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  avatar      String
-  description String
-  followers   Int
-  following   Int
+  username    String?
+  password    String?
+  avatar      String?
+  description String?
+  followers   Int       @default(0)
+  following   Int       @default(0)
   Comment     Comment[]
   Buzz        Buzz[]
 }
