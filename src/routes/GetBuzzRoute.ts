@@ -17,7 +17,6 @@ export async function GetBuzz(app: FastifyInstance) {
         comments: true,
       },
     });
-    console.log(id);
 
     return buzz;
   });

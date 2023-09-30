@@ -4,6 +4,7 @@ import { GetBuzzes } from "./routes/GetBuzzesRoute";
 import { CreateBuzz } from "./routes/CreateBuzzRoute";
 import { GetBuzz } from "./routes/GetBuzzRoute";
 import { CreateComment } from "./routes/CreateCommentRoute";
+import { GetComments } from "./routes/GetCommentsRoute";
 
 const app = fastify();
 
@@ -12,6 +13,7 @@ app.register(fastifyCors, {
 });
 
 app.register(GetBuzzes);
+app.register(GetComments);
 app.register(GetBuzz);
 app.register(CreateBuzz);
 app.register(CreateComment);
