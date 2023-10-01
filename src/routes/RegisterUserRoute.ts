@@ -2,8 +2,8 @@ import { FastifyInstance } from "fastify";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
 
-export async function CreateUser(app: FastifyInstance) {
-  app.post("/", async (request, reply) => {
+export async function RegisterUser(app: FastifyInstance) {
+  app.post("/register", async (request, reply) => {
     try {
       const bodySchema = z.object({
         username: z.string(),
@@ -11,6 +11,18 @@ export async function CreateUser(app: FastifyInstance) {
       });
 
       const response = bodySchema.parse(request.body);
+
+      const existingUser = await prisma.user.findFirst({
+        where: {
+          username: response.username,
+        },
+      });
+      if (existingUser) {
+        reply
+          .code(400)
+          .send({ error: "User with this username already exists" });
+        return;
+      }
 
       const newUser = await prisma.user.create({
         data: {

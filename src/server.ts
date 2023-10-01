@@ -5,7 +5,8 @@ import { CreateBuzz } from "./routes/CreateBuzzRoute";
 import { GetBuzz } from "./routes/GetBuzzRoute";
 import { CreateComment } from "./routes/CreateCommentRoute";
 import { GetComments } from "./routes/GetCommentsRoute";
-import { CreateUser } from "./routes/CreateUserRoute";
+import { RegisterUser } from "./routes/RegisterUserRoute";
+import { LoginUser } from "./routes/LoginUserRoute";
 
 const app = fastify();
 
@@ -18,7 +19,8 @@ app.register(GetComments);
 app.register(GetBuzz);
 app.register(CreateBuzz);
 app.register(CreateComment);
-app.register(CreateUser);
+app.register(RegisterUser);
+app.register(LoginUser);
 
 app
   .listen({
