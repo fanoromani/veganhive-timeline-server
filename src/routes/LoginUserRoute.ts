@@ -9,6 +9,7 @@ export async function LoginUser(app: FastifyInstance) {
         username: z.string(),
         password: z.string(),
       });
+      const jwtSecret = process.env.JWT_SECRET_KEY;
 
       const response = bodySchema.parse(request.body);
 
@@ -23,6 +24,10 @@ export async function LoginUser(app: FastifyInstance) {
         reply.code(401).send({ error: "Wrong username or password." });
         return;
       }
+
+      const jwt = require("jsonwebtoken");
+      const token = jwt.sign({ userId: user.id }, jwtSecret);
+      reply.code(201).send({ token, user: user });
 
       return user;
     } catch (error) {

@@ -9,6 +9,7 @@ export async function RegisterUser(app: FastifyInstance) {
         username: z.string(),
         password: z.string(),
       });
+      const jwtSecret = "segredo";
 
       const response = bodySchema.parse(request.body);
 
@@ -30,6 +31,10 @@ export async function RegisterUser(app: FastifyInstance) {
           password: response.password,
         },
       });
+
+      const jwt = require("jsonwebtoken");
+      const token = jwt.sign({ userId: newUser.id }, jwtSecret);
+      reply.code(201).send({ token, user: newUser });
 
       return newUser;
     } catch (error) {
