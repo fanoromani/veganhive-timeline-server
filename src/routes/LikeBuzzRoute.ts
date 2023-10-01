@@ -2,13 +2,13 @@ import { FastifyInstance } from "fastify";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
 
-export async function LikeCommentRoute(app: FastifyInstance) {
-  app.post("/:commentId/like", async (request, reply) => {
+export async function LikeBuzzRoute(app: FastifyInstance) {
+  app.post("/:buzzId/like", async (request, reply) => {
     try {
       const paramsSchema = z.object({
-        commentId: z.string(),
+        buzzId: z.string(),
       });
-      const { commentId } = paramsSchema.parse(request.params);
+      const { buzzId } = paramsSchema.parse(request.params);
 
       const bodySchema = z.object({
         userId: z.string(),
@@ -16,18 +16,18 @@ export async function LikeCommentRoute(app: FastifyInstance) {
 
       const { userId } = bodySchema.parse(request.body);
 
-      const comment = await prisma.comment.findFirst({
+      const buzz = await prisma.buzz.findFirst({
         where: {
-          id: commentId,
+          id: buzzId,
         },
       });
-      if (!comment) {
-        return reply.code(404).send({ error: "Comment not found" });
+      if (!buzz) {
+        return reply.code(404).send({ error: "buzz not found" });
       }
 
-      const userLiked = await prisma.comment.findFirst({
+      const userLiked = await prisma.buzz.findFirst({
         where: {
-          id: commentId,
+          id: buzzId,
           userId: userId,
         },
       });
@@ -38,32 +38,32 @@ export async function LikeCommentRoute(app: FastifyInstance) {
             id: userLiked.id,
           },
         });
-        const updatedComment = await prisma.comment.update({
+        const updatedbuzz = await prisma.buzz.update({
           where: {
-            id: commentId,
+            id: buzzId,
           },
           data: {
-            likes: comment.likes - 1,
+            likes: buzz.likes - 1,
           },
         });
-        return updatedComment;
+        return updatedbuzz;
       } else {
         await prisma.like.create({
           data: {
-            commentId: commentId,
+            buzzId: buzzId,
             userId: userId,
           },
         });
 
-        const updatedComment = await prisma.comment.update({
+        const updatedbuzz = await prisma.buzz.update({
           where: {
-            id: commentId,
+            id: buzzId,
           },
           data: {
-            likes: comment.likes + 1,
+            likes: buzz.likes + 1,
           },
         });
-        return updatedComment;
+        return updatedbuzz;
       }
     } catch (error) {
       // Handle errors and send an error response
