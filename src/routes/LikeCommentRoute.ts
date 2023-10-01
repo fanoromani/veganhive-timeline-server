@@ -3,7 +3,7 @@ import { z } from "zod";
 import { prisma } from "../lib/prisma";
 
 export async function LikeCommentRoute(app: FastifyInstance) {
-  app.post("/:commentId/like", async (request, reply) => {
+  app.post("/comment/:commentId/like", async (request, reply) => {
     try {
       const paramsSchema = z.object({
         commentId: z.string(),
@@ -16,6 +16,12 @@ export async function LikeCommentRoute(app: FastifyInstance) {
 
       const { userId } = bodySchema.parse(request.body);
 
+      /* const headersSchema = z.object({
+        token: z.string(),
+      });
+
+      const { token } = headersSchema.parse(request.headers); */
+
       const comment = await prisma.comment.findFirst({
         where: {
           id: commentId,
@@ -25,17 +31,16 @@ export async function LikeCommentRoute(app: FastifyInstance) {
         return reply.code(404).send({ error: "Comment not found" });
       }
 
-      const userLiked = await prisma.comment.findFirst({
+      const userLiked = await prisma.like.findFirst({
         where: {
-          id: commentId,
           userId: userId,
         },
       });
 
       if (userLiked) {
-        await prisma.like.delete({
+        await prisma.like.deleteMany({
           where: {
-            id: userLiked.id,
+            userId: userLiked.id,
           },
         });
         const updatedComment = await prisma.comment.update({

@@ -9,7 +9,6 @@ export async function LoginUser(app: FastifyInstance) {
         username: z.string(),
         password: z.string(),
       });
-      const jwtSecret = process.env.JWT_SECRET_KEY;
 
       const response = bodySchema.parse(request.body);
 
@@ -25,14 +24,9 @@ export async function LoginUser(app: FastifyInstance) {
         return;
       }
 
-      const jwt = require("jsonwebtoken");
-      const token = jwt.sign({ userId: user.id }, jwtSecret);
-      reply.code(201).send({ token, user: user });
-
-      return user;
+      const token = app.jwt.sign({ userId: user.id });
+      reply.send({ token, user });
     } catch (error) {
-      // Handle errors and send an error response
-
       reply.status(500).send({ error });
     }
   });

@@ -3,7 +3,7 @@ import { z } from "zod";
 import { prisma } from "../lib/prisma";
 
 export async function LikeBuzzRoute(app: FastifyInstance) {
-  app.post("/:buzzId/like", async (request, reply) => {
+  app.post("/buzz/:buzzId/like", async (request, reply) => {
     try {
       const paramsSchema = z.object({
         buzzId: z.string(),
