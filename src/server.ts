@@ -11,6 +11,7 @@ import { GetUser } from "./routes/GetUserRoute";
 import { LikeBuzzRoute } from "./routes/LikeBuzzRoute";
 import { LikeCommentRoute } from "./routes/LikeCommentRoute";
 import jwt from "@fastify/jwt";
+import authPlugin from "./authPlugin";
 
 const app = fastify();
 
@@ -20,6 +21,8 @@ app.register(fastifyCors, {
 
 const jwtKey = process.env.JWT_KEY || "secret";
 app.register(jwt, { secret: jwtKey });
+
+app.register(authPlugin);
 
 app.register(GetBuzzes);
 app.register(GetComments);

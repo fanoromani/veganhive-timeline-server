@@ -7,6 +7,7 @@ export async function GetBuzzes(app: FastifyInstance) {
       include: {
         author: true,
         comments: true,
+        whoLiked: true,
       },
       orderBy: {
         createdAt: "desc",

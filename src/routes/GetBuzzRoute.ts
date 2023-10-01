@@ -15,6 +15,7 @@ export async function GetBuzz(app: FastifyInstance) {
       include: {
         author: true,
         comments: true,
+        whoLiked: true,
       },
     });
 

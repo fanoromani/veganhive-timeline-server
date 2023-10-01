@@ -14,6 +14,7 @@ export async function GetComments(app: FastifyInstance) {
       },
       include: {
         author: true,
+        whoLiked: true,
       },
       orderBy: {
         createdAt: "asc",
