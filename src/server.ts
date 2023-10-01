@@ -7,6 +7,7 @@ import { CreateComment } from "./routes/CreateCommentRoute";
 import { GetComments } from "./routes/GetCommentsRoute";
 import { RegisterUser } from "./routes/RegisterUserRoute";
 import { LoginUser } from "./routes/LoginUserRoute";
+import { GetUser } from "./routes/GetUserRoute";
 
 const app = fastify();
 
@@ -17,6 +18,7 @@ app.register(fastifyCors, {
 app.register(GetBuzzes);
 app.register(GetComments);
 app.register(GetBuzz);
+app.register(GetUser);
 app.register(CreateBuzz);
 app.register(CreateComment);
 app.register(RegisterUser);
