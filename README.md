@@ -22,8 +22,8 @@ VeganHive Timeline Server is the backend component of the VeganHive Timeline app
 ### Devlopment
 
 - Framework: [Fastify](https://reactjs.org/)
-- Authentication: [fastify-jwt](https://github.com/pmndrs/zustand).
-- Validation: [Zod](https://tailwindcss.com/).
+- Authentication: [fastify-jwt](https://github.com/pmndrs/zustand)
+- Validation: [Zod](https://tailwindcss.com/)
 - Database: [Mongodb](https://github.com/axios/axios)
 - ORM: [Prisma](https://lucide.dev/guide/packages/lucide-react)
 - Password Encryption: [bcryptjs](https://react-hook-form.com/)
