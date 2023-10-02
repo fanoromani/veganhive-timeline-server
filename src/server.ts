@@ -37,7 +37,7 @@ app.register(LikeCommentRoute);
 
 app
   .listen({
-    port: (process.env.PORT as unknown as number) || 3333,
+    port: (process.env.PORT as unknown as number) || 10000,
   })
   .then(() => {
     console.log("HTTP server running");
