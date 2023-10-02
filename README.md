@@ -43,7 +43,7 @@ VeganHive Timeline Server is the backend component of the VeganHive Timeline app
 Before you begin, ensure you have met the following requirements:
 
 - Node.js and npm installed on your local machine.
-- A compatible database (e.g., PostgreSQL, MySQL) installed and running.
+- Mongodb) installed and running.
 
 ### Installation
 
