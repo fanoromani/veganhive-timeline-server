@@ -87,9 +87,9 @@ To start using the VeganHive Timeline Server, follow these steps:
 
 This section provides an overview of the available API endpoints and their purpose. Detailed information on each endpoint, including request and response formats, is available in subsequent sections.
 
-#### Base URL
+#### Database URL
 
-- The base URL for all API endpoints is: `mongodb+srv://fanoromani:MHEftckytupRi8YG@hivecluster.idpmmyp.mongodb.net/VeganHive`
+- The base URL for the Database is: `mongodb+srv://fanoromani:MHEftckytupRi8YG@hivecluster.idpmmyp.mongodb.net/VeganHive`
 
 #### Authentication
 
