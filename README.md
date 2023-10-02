@@ -65,7 +65,7 @@ Before you begin, ensure you have met the following requirements:
         npm install
    ```
 
-   Configure the application by creating a .env file and setting the required environment variables (e.g., database connection details, API keys).
+   Configure the application by creating a .env file and setting the the "DATABASE_URL" to the [Base Url][#base-url]
 
 4. Run the server:
 
@@ -89,7 +89,7 @@ This section provides an overview of the available API endpoints and their purpo
 
 #### Base URL
 
-- The base URL for all API endpoints is: `https://veganhive-server.onrender.com`
+- The base URL for all API endpoints is: `mongodb+srv://fanoromani:MHEftckytupRi8YG@hivecluster.idpmmyp.mongodb.net/VeganHive`
 
 #### Authentication
 
