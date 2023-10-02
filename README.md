@@ -65,9 +65,9 @@ Before you begin, ensure you have met the following requirements:
         npm install
    ```
 
-   Configure the application by creating a .env file and setting the "DATABASE_URL" as the [Base Url](#base-url)
+4. Configure the application by creating a .env file and setting the "DATABASE_URL" as `mongodb+srv://fanoromani:MHEftckytupRi8YG@hivecluster.idpmmyp.mongodb.net/VeganHive`
 
-4. Run the server:
+5. Run the server:
 
    ```bash
        npm run dev
@@ -86,10 +86,6 @@ To start using the VeganHive Timeline Server, follow these steps:
 #### Overview
 
 This section provides an overview of the available API endpoints and their purpose. Detailed information on each endpoint, including request and response formats, is available in subsequent sections.
-
-#### Database URL
-
-- The base URL for the Database is: `mongodb+srv://fanoromani:MHEftckytupRi8YG@hivecluster.idpmmyp.mongodb.net/VeganHive`
 
 #### Authentication
 
