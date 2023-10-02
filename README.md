@@ -1,6 +1,7 @@
 # VeganHive Timeline Server
 
 ![VeganHive Logo](https://veganhive.com/f8523bec88396b62446c5ed9610169e7.svg)
+<img src="https://veganhive.com/f8523bec88396b62446c5ed9610169e7.svg" style="width: 200px; height: 200px; border-radius: 100%" />
 
 ## Table of Contents
 
@@ -100,7 +101,7 @@ This section provides an overview of the available API endpoints and their purpo
 
 #### Endpoints
 
-##### 1. Create Buzz
+##### 1. Create Post
 
 - **Description:** Endpoint for user to make a post on the timeline.
 - **HTTP Method:** POST
@@ -115,8 +116,8 @@ POST /api/buzz
 Content-Type: application/json
 
 {
-    "userId": "value1",
-    "body": "value2"
+    "userId": "string",
+    "body": "string"
 }
 ```
 
@@ -135,6 +136,148 @@ POST /api/comment/:buzzId
 Content-Type: application/json
 
 {
-    "body": "value1"
+    "body": "string"
+}
+```
+
+##### 3. Get all Posts
+
+- **Description:** Endpoint for retrieving all posts.
+- **HTTP Method:** GET
+- **Endpoint:** `/api/buzzes`
+- **Request Example:**
+
+```http
+POST /api/buzzes
+Content-Type: application/json
+```
+
+##### 4. Get a Post's information
+
+- **Description:** Endpoint for retrieving information about one especific post.
+- **HTTP Method:** GET
+- **Endpoint:** `/api/buzz/:id`
+- **Request Parameters:**
+- id: for retrieving the id from the buzz in which you are fetching information for.
+- **Request Example:**
+
+```http
+GET /api/buzz/:id
+Content-Type: application/json
+
+{
+    "id": "string"
+}
+```
+
+##### 5. Get all Comments from a post
+
+- **Description:** Endpoint for retrieving all comments from a specific post.
+- **HTTP Method:** GET
+- **Endpoint:** `/api/comments/:buzzId`
+- **Request Parameters:**
+- buzzId: for retrieving the id from the buzz for which you are fetching the comments of.
+- **Request Example:**
+
+```http
+GET /api/comments/:buzzId
+Content-Type: application/json
+
+{
+    "buzzId": "string"
+}
+```
+
+##### 6. Get User's information
+
+- **Description:** Endpoint for retrieving the logged user's information.
+- **HTTP Method:** GET
+- **Endpoint:** `/api/me`
+- **Request Parameters:**
+- id: for retrieving the id from the user that is currently logged in.
+- **Request Example:**
+
+```http
+GET /api/me
+Content-Type: application/json
+
+{
+    "id": "string"
+}
+```
+
+##### 7. Like a Post
+
+- **Description:** Endpoint for user to like a post from the timeline.
+- **HTTP Method:** POST
+- **Endpoint:** `/api/buzz/:buzzId/like`
+- **Request Parameters:**
+- buzzId: for retrieving the id from the buzz you are liking/unliking.
+- **Request Example:**
+
+```http
+POST /api/buzz/:buzzId/like
+Content-Type: application/json
+
+{
+    "buzzId": "string"
+}
+```
+
+##### 8. Like a Comment
+
+- **Description:** Endpoint for user to like a comment from a post.
+- **HTTP Method:** POST
+- **Endpoint:** `/api/comment/:buzzId/like`
+- **Request Parameters:**
+- buzzId: for retrieving the id from the comment you are liking/unliking.
+- **Request Example:**
+
+```http
+POST /api/comment/:buzzId/like
+Content-Type: application/json
+
+{
+    "buzzId": "string"
+}
+```
+
+##### 9. Login User
+
+- **Description:** Endpoint for user to login in case they already have an account.
+- **HTTP Method:** POST
+- **Endpoint:** `/api/login`
+- **Request Parameters:**
+- username: the user's username.
+- password: the user's password.
+- **Request Example:**
+
+```http
+POST /api/login
+Content-Type: application/json
+
+{
+    "username": "string"
+    "passaword": "string"
+}
+```
+
+##### 10. Register User
+
+- **Description:** Endpoint for the user to register in case they don't have an account.
+- **HTTP Method:** POST
+- **Endpoint:** `/api/register`
+- **Request Parameters:**
+- username: the user's username.
+- password: the user's password.
+- **Request Example:**
+
+```http
+POST /api/comment/:buzzId
+Content-Type: application/json
+
+{
+    "username": "string"
+    "passaword": "string"
 }
 ```
