@@ -1,10 +1,11 @@
 # VeganHive Timeline Server
 
-![VeganHive Logo](link-to-your-logo.png)
+![VeganHive Logo](https://veganhive.com/f8523bec88396b62446c5ed9610169e7.svg)
 
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Tech Stack](#tech-stack)
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -18,10 +19,22 @@
 
 VeganHive Timeline Server is the backend component of the VeganHive Timeline application. It provides the necessary APIs and services to manage and retrieve timeline data related to vegan events, news, and updates.
 
+## Tech Stack
+
+### Devlopment
+
+- Framework: [Fastify](https://reactjs.org/)
+- Authentication: [fastify-jwt](https://github.com/pmndrs/zustand).
+- Validation: [Zod](https://tailwindcss.com/).
+- Database: [Mongodb](https://github.com/axios/axios)
+- ORM: [Prisma](https://lucide.dev/guide/packages/lucide-react)
+- Password Encryption: [bcryptjs](https://react-hook-form.com/)
+- [Typescript](https://www.typescriptlang.org/)
+
 ## Features
 
-- **Event Management**: Easily create, update, and delete vegan events.
-- **Timeline Generation**: Automatically generate a timeline of vegan-related events based on user preferences.
+- **Event Management**: Easily create, like, and comment vegan posts.
+- **Timeline Generation**: Automatically generate a timeline of vegan-related posts made by users.
 - **User Authentication**: Secure user authentication system to manage user-specific data.
 - **RESTful API**: Provides a RESTful API for easy integration with the frontend or other applications.
 - **Database Storage**: Stores data efficiently in a database for quick retrieval.
