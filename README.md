@@ -22,11 +22,10 @@ VeganHive Timeline Server is the backend component of the VeganHive Timeline app
 ### Devlopment
 
 - Framework: [Fastify](https://reactjs.org/)
-- Authentication: [fastify-jwt](https://github.com/pmndrs/zustand).
-- Validation: [Zod](https://tailwindcss.com/).
+- Authentication: [fastify-jwt](https://github.com/pmndrs/zustand)
+- Validation: [Zod](https://tailwindcss.com/)
 - Database: [Mongodb](https://github.com/axios/axios)
 - ORM: [Prisma](https://lucide.dev/guide/packages/lucide-react)
-- Password Encryption: [bcryptjs](https://react-hook-form.com/)
 - [Typescript](https://www.typescriptlang.org/)
 
 ## Features
@@ -44,7 +43,7 @@ VeganHive Timeline Server is the backend component of the VeganHive Timeline app
 Before you begin, ensure you have met the following requirements:
 
 - Node.js and npm installed on your local machine.
-- A compatible database (e.g., PostgreSQL, MySQL) installed and running.
+- Mongodb installed and running.
 
 ### Installation
 
@@ -66,7 +65,7 @@ Before you begin, ensure you have met the following requirements:
         npm install
    ```
 
-   Configure the application by creating a .env file and setting the required environment variables (e.g., database connection details, API keys).
+   Configure the application by creating a .env file and setting the the "DATABASE_URL" as the [Base Url](#base-url)
 
 4. Run the server:
 
@@ -161,6 +160,10 @@ Content-Type: application/json
 ```http
 GET /api/buzz/:id
 Content-Type: application/json
+
+{
+    "id": "string"
+}
 ```
 
 ##### 5. Get all Comments from a post
@@ -175,6 +178,10 @@ Content-Type: application/json
 ```http
 GET /api/comments/:buzzId
 Content-Type: application/json
+
+{
+    "buzzId": "string"
+}
 ```
 
 ##### 6. Get User's information
@@ -207,6 +214,10 @@ Content-Type: application/json
 ```http
 POST /api/buzz/:buzzId/like
 Content-Type: application/json
+
+{
+    "buzzId": "string"
+}
 ```
 
 ##### 8. Like a Comment
@@ -221,6 +232,10 @@ Content-Type: application/json
 ```http
 POST /api/comment/:buzzId/like
 Content-Type: application/json
+
+{
+    "buzzId": "string"
+}
 ```
 
 ##### 9. Login User
