@@ -65,7 +65,7 @@ Before you begin, ensure you have met the following requirements:
         npm install
    ```
 
-   Configure the application by creating a .env file and setting the the "DATABASE_URL" to the [Base Url][#base-url]
+   Configure the application by creating a .env file and setting the the "DATABASE_URL" to the [Base Url](#base-url)
 
 4. Run the server:
 
