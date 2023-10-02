@@ -1,8 +1,5 @@
 # VeganHive Timeline Server
 
-![VeganHive Logo](https://veganhive.com/f8523bec88396b62446c5ed9610169e7.svg)
-<img src="https://veganhive.com/f8523bec88396b62446c5ed9610169e7.svg" style="width: 200px; height: 200px; border-radius: 100%" />
-
 ## Table of Contents
 
 - [Introduction](#introduction)
