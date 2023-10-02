@@ -37,6 +37,7 @@ app.register(LikeCommentRoute);
 
 app
   .listen({
+    host: "0.0.0.0",
     port: (process.env.PORT as unknown as number) || 10000,
   })
   .then(() => {
