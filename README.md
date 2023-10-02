@@ -10,8 +10,6 @@
   - [Installation](#installation)
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -265,7 +263,7 @@ Content-Type: application/json
 - **Request Example:**
 
 ```http
-POST /api/comment/:buzzId
+POST /api/register
 Content-Type: application/json
 
 {
