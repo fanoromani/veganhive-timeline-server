@@ -90,7 +90,7 @@ This section provides an overview of the available API endpoints and their purpo
 
 #### Base URL
 
-- The base URL for all API endpoints is: `https://veganhive-server.onrender.com`
+- The base URL for all API endpoints is: `mongodb+srv://fanoromani:MHEftckytupRi8YG@hivecluster.idpmmyp.mongodb.net/VeganHive`
 
 #### Authentication
 
@@ -161,10 +161,6 @@ Content-Type: application/json
 ```http
 GET /api/buzz/:id
 Content-Type: application/json
-
-{
-    "id": "string"
-}
 ```
 
 ##### 5. Get all Comments from a post
@@ -179,10 +175,6 @@ Content-Type: application/json
 ```http
 GET /api/comments/:buzzId
 Content-Type: application/json
-
-{
-    "buzzId": "string"
-}
 ```
 
 ##### 6. Get User's information
@@ -215,10 +207,6 @@ Content-Type: application/json
 ```http
 POST /api/buzz/:buzzId/like
 Content-Type: application/json
-
-{
-    "buzzId": "string"
-}
 ```
 
 ##### 8. Like a Comment
@@ -233,10 +221,6 @@ Content-Type: application/json
 ```http
 POST /api/comment/:buzzId/like
 Content-Type: application/json
-
-{
-    "buzzId": "string"
-}
 ```
 
 ##### 9. Login User
