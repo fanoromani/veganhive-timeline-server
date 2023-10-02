@@ -10,8 +10,17 @@ export async function GetUser(app: FastifyInstance) {
       where: {
         id: userId,
       },
+      include: {
+        Buzz: true,
+      },
     });
 
-    return user;
+    return {
+      id: user.id,
+      username: user.username,
+      avatar: user.avatar,
+      description: user.description,
+      buzzes: user.Buzz.length,
+    };
   });
 }
