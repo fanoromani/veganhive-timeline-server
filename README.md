@@ -65,63 +65,63 @@ Before you begin, ensure you have met the following requirements:
 
 ### Usage
 
-    To start using the VeganHive Timeline Server, follow these steps:
+To start using the VeganHive Timeline Server, follow these steps:
 
-    1.  Ensure the server is running as described in the installation section.
+1.  Ensure the server is running as described in the installation section.
 
-    2.  Make API requests to interact with the server's endpoints, as documented in the API Documentation section.
+2.  Make API requests to interact with the server's endpoints, as documented in the API Documentation section.
 
 ### API Documentation
 
 #### Overview
 
-    This section provides an overview of the available API endpoints and their purpose. Detailed information on each endpoint, including request and response formats, is available in subsequent sections.
+This section provides an overview of the available API endpoints and their purpose. Detailed information on each endpoint, including request and response formats, is available in subsequent sections.
 
 #### Base URL
 
-    - The base URL for all API endpoints is: `https://veganhive-server.onrender.com`
+- The base URL for all API endpoints is: `https://veganhive-server.onrender.com`
 
 #### Authentication
 
-    - Some routes require user authentication through registering an username and password.
+- Some routes require user authentication through registering an username and password.
 
 #### Endpoints
 
 ##### 1. Create Buzz
 
-    - **Description:** Endpoint for user to make a post on the timeline.
-    - **HTTP Method:** POST
-    - **Endpoint:** `/api/buzz`
-    - **Request Parameters:**
-    - userId: for retrieving the user id from the user making the post.
-    - body: the actual post body.
-    - **Request Example:**
+- **Description:** Endpoint for user to make a post on the timeline.
+- **HTTP Method:** POST
+- **Endpoint:** `/api/buzz`
+- **Request Parameters:**
+- userId: for retrieving the user id from the user making the post.
+- body: the actual post body.
+- **Request Example:**
 
-    ```http
-    POST /api/buzz
-    Content-Type: application/json
+```http
+POST /api/buzz
+Content-Type: application/json
 
-    {
-        "userId": "value1",
-        "body": "value2"
-    }
-    ```
+{
+    "userId": "value1",
+    "body": "value2"
+}
+```
 
 ##### 2. Create Comment
 
-    - **Description:** Endpoint for user to comment on a post from the timeline.
-    - **HTTP Method:** POST
-    - **Endpoint:** `/api/comment/:buzzId`
-    - **Request Parameters:**
-    - buzzId: for retrieving the id from the buzz in which you are creating the comment.
-    - Body: the actual post body.
-    - **Request Example:**
+- **Description:** Endpoint for user to comment on a post from the timeline.
+- **HTTP Method:** POST
+- **Endpoint:** `/api/comment/:buzzId`
+- **Request Parameters:**
+- buzzId: for retrieving the id from the buzz in which you are creating the comment.
+- Body: the actual post body.
+- **Request Example:**
 
-    ```http
-    POST /api/comment/:buzzId
-    Content-Type: application/json
+```http
+POST /api/comment/:buzzId
+Content-Type: application/json
 
-    {
-        "body": "value1"
-    }
-    ```
+{
+    "body": "value1"
+}
+```
