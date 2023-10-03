@@ -37,10 +37,6 @@ export async function LoginUser(app: FastifyInstance) {
       const token = app.jwt.sign({ userId: user.id });
       reply.send({
         token,
-        user: {
-          id: user.id,
-          username: user.username,
-        },
       });
     } catch (error) {
       reply.status(500).send({ error });

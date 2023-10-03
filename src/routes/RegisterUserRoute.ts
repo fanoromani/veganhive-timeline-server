@@ -37,7 +37,6 @@ export async function RegisterUser(app: FastifyInstance) {
       const token = app.jwt.sign({ userId: newUser.id });
       reply.send({
         token,
-        newUser: { id: newUser.id, username: newUser.username },
       });
     } catch (error) {
       // Handle errors and send an error response
